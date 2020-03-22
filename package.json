@@ -9,6 +9,8 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
     "lint": "eslint --max-warnings 0 \"src/**/*.{ts,tsx}\"",
+    "jest": "jest --coverage --passWithNoTests",
+    "test": "yarn lint && yarn typecheck && yarn format:check && yarn jest",
     "eject": "expo eject"
   },
   "dependencies": {
@@ -21,12 +23,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
+    "@types/jest": "^25.1.4",
     "@types/react": "~16.9.0",
     "@types/react-native": "~0.60.23",
+    "@types/react-test-renderer": "^16.9.2",
     "babel-preset-expo": "~8.0.0",
     "eslint": "^6.8.0",
     "eslint-config-kodefox": "^0.2.2",
+    "jest": "^25.1.0",
+    "jest-expo": "^36.0.1",
     "prettier": "^2.0.1",
+    "react-native-testing-library": "^1.13.0",
+    "react-test-renderer": "^16.13.1",
+    "ts-jest": "^25.2.1",
     "typescript": "^3.8.3"
   },
   "eslintConfig": {
