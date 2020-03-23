@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, View, StyleSheet, TouchableOpacity } from 'react-native';
 
+// TODO: Replace BannerLogo with higher res asset or use actual svg.
 import BannerLogo from '../../assets/banner_logo.png';
 import Close from '../../assets/close.svg';
 
@@ -30,6 +31,7 @@ let styles = StyleSheet.create({
   root: {
     flex: 1,
     height: 72,
+    minHeight: 72,
     maxHeight: 72,
     flexDirection: 'row',
     justifyContent: 'space-between',

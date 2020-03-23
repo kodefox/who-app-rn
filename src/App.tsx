@@ -1,11 +1,13 @@
 import React from 'react';
-import { ActivityIndicator, View, StyleSheet } from 'react-native';
+import { ActivityIndicator, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import HomeScreen from './screens/Home';
 import GettingStartedScreen from './screens/GettingStarted';
 import OnboardingMessageScreen from './screens/OnboardingMessage';
+import ProtectYourselfScreen from './screens/ProtectYourself';
 import CheckYourHealthScreen from './screens/CheckYourHealth';
 
 import useGettingStarted from './helpers/useGettingStarted';
@@ -21,36 +23,36 @@ function App() {
   }
 
   return (
-    <View style={StyleSheet.absoluteFill}>
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerBackTitleVisible: false }}>
-          {!isReturningUser && (
-            <>
-              <Stack.Screen
-                name="GettingStarted"
-                component={GettingStartedScreen}
-                options={{
-                  headerShown: false,
-                }}
-              />
-              <Stack.Screen
-                name="OnboardingMessage"
-                component={OnboardingMessageScreen}
-                options={{
-                  headerShown: false,
-                }}
-              />
-            </>
-          )}
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen
-            name="CheckHealth"
-            component={CheckYourHealthScreen}
-            options={{ title: t('Check Your Health') }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={StyleSheet.absoluteFill}>
+        <NavigationContainer>
+          {/* When headerMode is set to "none", we need to manually handle the safe area */}
+          <Stack.Navigator headerMode="none">
+            {!isReturningUser && (
+              <>
+                <Stack.Screen
+                  name="GettingStarted"
+                  component={GettingStartedScreen}
+                />
+                <Stack.Screen
+                  name="OnboardingMessage"
+                  component={OnboardingMessageScreen}
+                />
+              </>
+            )}
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen
+              name="ProtectYourself"
+              component={ProtectYourselfScreen}
+            />
+            <Stack.Screen
+              name="CheckHealth"
+              component={CheckYourHealthScreen}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

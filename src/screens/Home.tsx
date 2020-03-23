@@ -1,28 +1,22 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import { View, SafeAreaView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import theme from '../constants/theme';
-
-import Banner from '../../assets/banner_logo.svg';
+import Banner from '../components/Banner';
+import Button from '../components/Button';
 
 export default function Home() {
   const { navigate } = useNavigation();
   return (
     <SafeAreaView style={styles.root}>
+      <Banner />
       <View style={styles.mainContent}>
-        <Banner />
-        <TouchableOpacity onPress={() => navigate('CheckHealth')}>
-          <View style={styles.button}>
-            <Text style={styles.buttonText}>{t('Check your health')}</Text>
-          </View>
-        </TouchableOpacity>
+        <Button onPress={() => navigate('ProtectYourself')}>
+          {t('Protect Yourself')}
+        </Button>
+        <Button onPress={() => navigate('CheckHealth')}>
+          {t('Check Your Health')}
+        </Button>
       </View>
     </SafeAreaView>
   );
@@ -35,12 +29,4 @@ let styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   mainContent: { padding: 30 },
-  button: {
-    margin: 30,
-    padding: 20,
-    backgroundColor: theme.colors.primary,
-    borderRadius: 4,
-    alignItems: 'center',
-  },
-  buttonText: { color: 'white' },
 });
