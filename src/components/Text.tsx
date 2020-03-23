@@ -1,10 +1,11 @@
-import React, { ComponentProps } from 'react';
+import React, { ComponentProps, ReactNode } from 'react';
 import { Text as TextBase, StyleSheet, TextStyle } from 'react-native';
 
 type Props = ComponentProps<typeof TextBase> & {
   size?: number;
   weight?: TextStyle['fontWeight'];
   fontStyle?: TextStyle['fontStyle'];
+  children?: ReactNode;
 };
 
 function Text(props: Props) {
