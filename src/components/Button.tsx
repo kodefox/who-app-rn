@@ -1,13 +1,14 @@
 import React from 'react';
 import {
-  Text,
   TextStyle,
   StyleProp,
   StyleSheet,
   TouchableOpacity,
   ViewStyle,
 } from 'react-native';
-import theme, { colors } from '../constants/theme';
+
+import Text from './Text';
+import theme from '../constants/theme';
 
 type Props = {
   /**
@@ -36,7 +37,7 @@ type Props = {
   labelStyle?: StyleProp<TextStyle>;
 };
 
-export default function Button({
+function Button({
   onPress,
   children,
   fullWidth,
@@ -60,8 +61,9 @@ export default function Button({
         style={[
           labelStyle,
           outlined ? styles.outlinedLabel : styles.primaryLabel,
-          styles.label,
         ]}
+        size={24}
+        weight="500"
       >
         {children}
       </Text>
@@ -78,11 +80,6 @@ let styles = StyleSheet.create({
     padding: 14,
     borderRadius: 8,
     alignItems: 'center',
-  },
-  label: {
-    // TODO: Change to constant
-    fontSize: 24,
-    fontWeight: '500',
   },
   primaryLabel: {
     color: theme.colors.white,
@@ -101,3 +98,5 @@ let styles = StyleSheet.create({
     backgroundColor: theme.colors.primary,
   },
 });
+
+export default Button;
