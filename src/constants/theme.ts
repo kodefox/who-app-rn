@@ -3,6 +3,7 @@
 
 export const colors = {
   primary: '#0093d5',
+  white: '#ffffff',
 };
 
 // Not sure if we need this default export.
