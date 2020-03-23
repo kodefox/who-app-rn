@@ -23,6 +23,7 @@ export default function useGettingStarted(): boolean | null {
         setIsReturningUser(true);
         return;
       }
+
       setIsReturningUser(false);
     });
   }, []);
