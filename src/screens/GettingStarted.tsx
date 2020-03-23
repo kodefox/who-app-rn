@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import theme from '../constants/theme';
 import Logo from '../../assets/logo.svg';
@@ -57,15 +51,5 @@ let styles = StyleSheet.create({
     marginVertical: 15,
     fontSize: 17,
     textAlign: 'center',
-  },
-  button: {
-    margin: 30,
-    padding: 20,
-    backgroundColor: theme.colors.primary,
-    borderRadius: 4,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: 'white',
   },
 });
