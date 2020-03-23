@@ -44,6 +44,7 @@ let styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: theme.colors.white,
   },
   logoWrapper: {
     width: '40%',
