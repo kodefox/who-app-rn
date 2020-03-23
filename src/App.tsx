@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './screens/Home';
 import GettingStartedScreen from './screens/GettingStarted';
+import OnboardingMessageScreen from './screens/OnboardingMessage';
 import CheckYourHealthScreen from './screens/CheckYourHealth';
 
 import useGettingStarted from './helpers/useGettingStarted';
@@ -24,13 +25,22 @@ function App() {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerBackTitleVisible: false }}>
           {!isReturningUser && (
-            <Stack.Screen
-              name="GettingStarted"
-              component={GettingStartedScreen}
-              options={{
-                headerShown: false,
-              }}
-            />
+            <>
+              <Stack.Screen
+                name="GettingStarted"
+                component={GettingStartedScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+              <Stack.Screen
+                name="OnboardingMessage"
+                component={OnboardingMessageScreen}
+                options={{
+                  headerShown: false,
+                }}
+              />
+            </>
           )}
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen

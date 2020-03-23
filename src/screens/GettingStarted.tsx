@@ -22,7 +22,7 @@ export default function GettingStarted() {
             'Learn how to protect yourself and your community. Find medical resources to help.',
           )}
         </Text>
-        <Button onPress={() => navigate('Home')}>
+        <Button onPress={() => navigate('OnboardingMessage')}>
           {t('Check Your Health')}
         </Button>
       </View>
