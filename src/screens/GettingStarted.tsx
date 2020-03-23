@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import theme from '../constants/theme';
 import Logo from '../../assets/logo.svg';
@@ -8,7 +8,7 @@ import Button from '../components/Button';
 export default function GettingStarted() {
   let { navigate } = useNavigation();
   return (
-    <SafeAreaView style={styles.root}>
+    <ScrollView style={styles.root} contentContainerStyle={styles.container}>
       <View style={styles.mainContent}>
         <View style={styles.logoWrapper}>
           <Logo
@@ -26,15 +26,17 @@ export default function GettingStarted() {
           {t('Check Your Health')}
         </Button>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
 let styles = StyleSheet.create({
   root: {
     flex: 1,
-    justifyContent: 'space-between',
     backgroundColor: 'white',
+  },
+  container: {
+    justifyContent: 'space-between',
   },
   mainContent: {
     padding: 30,

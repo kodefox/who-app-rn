@@ -1,32 +1,59 @@
 import React from 'react';
-import { View, SafeAreaView, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import Banner from '../components/Banner';
 import Button from '../components/Button';
+
+import Logo from '../../assets/banner_logo.svg';
 
 export default function Home() {
   const { navigate } = useNavigation();
+
   return (
-    <SafeAreaView style={styles.root}>
-      <Banner />
-      <View style={styles.mainContent}>
-        <Button onPress={() => navigate('ProtectYourself')}>
-          {t('Protect Yourself')}
+    <ScrollView style={styles.root}>
+      <View style={styles.logoWrapper}>
+        <Logo />
+      </View>
+      <View style={styles.wrapper}>
+        <Button
+          onPress={() => navigate('ProtectYourself')}
+          containerStyle={styles.button}
+        >
+          Protect Yourself
         </Button>
-        <Button onPress={() => navigate('CheckHealth')}>
-          {t('Check Your Health')}
+        <Button
+          onPress={() => navigate('CheckHealth')}
+          containerStyle={styles.button}
+        >
+          Check Your Health
+        </Button>
+        <Button outlined onPress={() => {}} containerStyle={styles.button}>
+          Share the App
+        </Button>
+        <Button outlined onPress={() => {}} containerStyle={styles.button}>
+          Send Feedback
+        </Button>
+        <Button outlined onPress={() => {}} containerStyle={styles.button}>
+          About the App
         </Button>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   root: {
     flex: 1,
-    justifyContent: 'space-between',
     backgroundColor: 'white',
   },
-  mainContent: { padding: 30 },
+  logoWrapper: {
+    marginVertical: 20,
+  },
+  wrapper: {
+    paddingHorizontal: 40,
+  },
+  button: {
+    marginVertical: 15,
+    paddingVertical: 20,
+  },
 });
