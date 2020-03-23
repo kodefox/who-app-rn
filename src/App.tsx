@@ -13,7 +13,15 @@ import CheckYourHealthScreen from './screens/CheckYourHealth';
 
 import useGettingStarted from './helpers/useGettingStarted';
 
-const Stack = createStackNavigator();
+export type RootStackParamList = {
+  GettingStarted: undefined;
+  ProtectYourself: { fromOnboarding?: boolean } | undefined;
+  OnboardingMessage: undefined;
+  Home: undefined;
+  CheckHealth: undefined;
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 function App() {
   let isReturningUser = useGettingStarted();
