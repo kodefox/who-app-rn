@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <SafeAreaView>
       <View style={{ padding: 30 }}>
-        <Text>{t('Main menu will go here.')}</Text>
+        <Text style={{ textAlign: 'center' }}>
+          {t('Main menu will go here.')}
+        </Text>
       </View>
     </SafeAreaView>
   );
