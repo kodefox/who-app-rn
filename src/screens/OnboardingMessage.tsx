@@ -1,5 +1,6 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Text from '../components/Text';
 import theme from '../constants/theme';
@@ -7,8 +8,17 @@ import theme from '../constants/theme';
 import Logo from '../../assets/logo.svg';
 
 export default function OnboardingMessage() {
+  let { navigate } = useNavigation();
   return (
-    <SafeAreaView style={styles.root}>
+    <TouchableOpacity
+      activeOpacity={0.7}
+      style={styles.root}
+      onPress={() =>
+        navigate('ProtectYourself', {
+          fromOnboarding: true,
+        })
+      }
+    >
       <View style={styles.logoWrapper}>
         <Logo
           style={StyleSheet.flatten(styles.logo)}
@@ -20,7 +30,7 @@ export default function OnboardingMessage() {
         <MessageRow text={t('Learn how to protect yourself')} />
         <MessageRow text={t('Report sickness')} />
       </View>
-    </SafeAreaView>
+    </TouchableOpacity>
   );
 }
 
