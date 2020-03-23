@@ -2,18 +2,15 @@ import React from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import Banner from '../components/Banner';
 import Button from '../components/Button';
-
-import Logo from '../../assets/banner_logo.svg';
 
 export default function Home() {
   const { navigate } = useNavigation();
 
   return (
     <ScrollView style={styles.root}>
-      <View style={styles.logoWrapper}>
-        <Logo />
-      </View>
+      <Banner />
       <View style={styles.wrapper}>
         <Button
           onPress={() => navigate('ProtectYourself')}
@@ -46,10 +43,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  logoWrapper: {
-    marginVertical: 20,
-  },
   wrapper: {
+    marginTop: 20,
     paddingHorizontal: 40,
   },
   button: {
