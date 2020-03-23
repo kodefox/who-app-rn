@@ -6,12 +6,6 @@ import theme from '../constants/theme';
 
 import Logo from '../../assets/logo.svg';
 
-const MESSAGE_FEATURES = [
-  'Get the latest information',
-  'Learn how to protect yourself',
-  'Report sickness',
-];
-
 export default function OnboardingMessage() {
   return (
     <SafeAreaView style={styles.root}>
@@ -22,18 +16,26 @@ export default function OnboardingMessage() {
         />
       </View>
       <View>
-        {MESSAGE_FEATURES.map((item) => {
-          return (
-            <View style={styles.messageRow} key={item}>
-              <View style={styles.bullet} />
-              <Text size={20} weight="500" style={styles.messageText}>
-                {item}
-              </Text>
-            </View>
-          );
-        })}
+        <MessageRow text={t('Get the latest information')} />
+        <MessageRow text={t('Learn how to protect yourself')} />
+        <MessageRow text={t('Report sickness')} />
       </View>
     </SafeAreaView>
+  );
+}
+
+type MessageRowProps = {
+  text: string;
+};
+
+function MessageRow({ text }: MessageRowProps) {
+  return (
+    <View style={styles.messageRow}>
+      <View style={styles.bullet} />
+      <Text size={20} weight="500" style={styles.messageText}>
+        {text}
+      </Text>
+    </View>
   );
 }
 
