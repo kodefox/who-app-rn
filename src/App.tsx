@@ -1,8 +1,9 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { AppLoading } from 'expo';
 
 import HomeScreen from './screens/Home';
 import GettingStartedScreen from './screens/GettingStarted';
@@ -18,8 +19,7 @@ function App() {
   let isReturningUser = useGettingStarted();
 
   if (isReturningUser == null) {
-    // TODO: Should display splash screen
-    return <ActivityIndicator />;
+    return <AppLoading />;
   }
 
   return (
