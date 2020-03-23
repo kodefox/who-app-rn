@@ -11,16 +11,24 @@ type Props = { route: RouteProp<RootStackParamList, 'ProtectYourself'> };
 
 function ProtectYourself(props: Props) {
   let { route } = props;
-  let { navigate, setParams } = useNavigation();
+  let { navigate, setParams, reset } = useNavigation();
   return (
     <View style={styles.root}>
       <Banner
-        onClosePress={async () => {
+        onClosePress={() => {
           if (route.params?.fromOnboarding) {
-            await setHasFinishedOnboarding();
+            setHasFinishedOnboarding();
             setParams({
               fromOnboarding: false,
             });
+            // Reset the navigation state so new user won't see
+            // transition from Home to CheckYourself screen
+            // as going back.
+            reset({
+              index: 0,
+              routes: [{ name: 'Home' }],
+            });
+            return;
           }
           navigate('Home');
         }}
