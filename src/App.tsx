@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './screens/Home';
 import GettingStartedScreen from './screens/GettingStarted';
+import CheckYourHealthScreen from './screens/CheckYourHealth';
 
 import useGettingStarted from './helpers/useGettingStarted';
 
@@ -32,6 +33,11 @@ function App() {
             />
           )}
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen
+            name="CheckHealth"
+            component={CheckYourHealthScreen}
+            options={{ title: t('Check Your Health') }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
