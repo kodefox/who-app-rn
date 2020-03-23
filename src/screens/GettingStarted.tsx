@@ -16,7 +16,10 @@ export default function GettingStarted() {
     <SafeAreaView style={styles.root}>
       <View style={styles.mainContent}>
         <View style={styles.logoWrapper}>
-          <Logo style={styles.logo} color={theme.colors.primary} />
+          <Logo
+            style={StyleSheet.flatten(styles.logo)}
+            color={theme.colors.primary}
+          />
         </View>
         <Text style={styles.paragraph}>{t('The official COVID-19 GUIDE')}</Text>
         <Text style={styles.paragraph}>
