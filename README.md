@@ -16,7 +16,7 @@ https://github.com/WorldHealthOrganization/app/issues/193
 
 ## Web Version
 
-1. Point your mobile browser at: https://kodefox.github.io/who-app/
+1. Point your mobile browser at: https://kodefox.github.io/who-app-rn/
 
 ## Screenshots
 
