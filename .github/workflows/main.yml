@@ -35,11 +35,20 @@ jobs:
         run: yarn test
 
       - uses: expo/expo-github-action@v5
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' && success()
         with:
           expo-version: 3.x
           expo-cache: true
 
-      - name: Deploy preview
-        if: github.event_name == 'push'
-        run: yarn deploy
+      - name: Build preview
+        if: github.event_name == 'push' && success()
+        run: expo build:web
+
+      - name: Deploy to Github Pages
+        if: github.event_name == 'push' && success()
+        uses: crazy-max/ghaction-github-pages@v1.3.0
+        with:
+          target_branch: gh-pages
+          build_dir: web-build
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
