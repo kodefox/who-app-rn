@@ -35,5 +35,5 @@ jobs:
         run: yarn test
 
       - name: Deploy preview
-        if: github.event.name == 'push'
+        if: github.event_name == 'push'
         run: yarn deploy
