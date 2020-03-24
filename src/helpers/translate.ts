@@ -1,3 +1,5 @@
+import { createElement, Fragment, ReactNode } from 'react';
+
 type ParamsObject = {
   [key: string]: unknown;
 };
@@ -28,11 +30,24 @@ export function t(input: string, params?: ParamsObject): string {
   }
 }
 
+interface ResultsArray<T = unknown> extends Array<T> {
+  toElements(): ReactNode;
+}
+
+let toElements = (frags: Array<ReactNode>) =>
+  frags.map((s, i) => createElement(Fragment, { key: i }, s));
+
+let createResultsArray = (): ResultsArray => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let results: any = [];
+  results.toElements = () => toElements(results);
+  return results;
+};
+
 // Process a string with fragments inside.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-t.frag = (input: string, params: ParamsWithResolver): any => {
+t.frag = (input: string, params: ParamsWithResolver): ResultsArray => {
   let string = t(input, params);
-  let results: Array<unknown> = [];
+  let results = createResultsArray();
   let lastIndex = 0;
   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
