@@ -3,9 +3,9 @@
   "homepage": "https://kodefox.github.io/who-app",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
+    "android": "yarn start --android",
+    "ios": "yarn start --ios",
+    "web": "yarn start --web",
     "typecheck": "tsc --noEmit -p .",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
@@ -15,7 +15,8 @@
     "eject": "expo eject",
     "deploy": "gh-pages -d web-build",
     "predeploy": "expo build:web",
-    "codegen": "node ./scripts/codegen"
+    "codegen": "node ./scripts/codegen",
+    "prestart": "yarn codegen"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.5",
