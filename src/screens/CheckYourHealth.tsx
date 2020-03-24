@@ -16,7 +16,7 @@ export default function CheckYourHealth() {
   const [carouselIndex, setIndex] = useState(0);
   return (
     <View style={styles.root}>
-      <Banner />
+      <Banner style={styles.banner} />
       <View style={styles.headerText}>
         <Text style={styles.centerText}>
           {t.frag('Symptoms may appear <b>2-14 days after exposure</b>', {
@@ -95,8 +95,17 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flex: 1,
   },
-  container: { flex: 1, alignItems: 'center' },
-  headerText: { paddingVertical: 24, paddingHorizontal: 30 },
+  banner: {
+    marginHorizontal: 30,
+  },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  headerText: {
+    paddingVertical: 24,
+    paddingHorizontal: 30,
+  },
   centerText: { textAlign: 'center' },
   svg: { alignSelf: 'center' },
   warningSvgWrapper: { paddingRight: 12 },
