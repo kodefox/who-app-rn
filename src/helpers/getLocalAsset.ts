@@ -28,6 +28,8 @@ export default async function getLocalAsset(path: string, name: string) {
     throw new Error('Local asset not found.');
   }
   let asset = Asset.fromModule(module);
+  // On web, some properties like height and localUri won't be available
+  // before the asset has been downloaded.
   // Uncomment for asset caching.
   // await asset.downloadAsync();
   return asset;
