@@ -87,7 +87,7 @@ let Screens: Record<ScreenType, ComponentType<any> | null> = {
               .frag(text, {
                 em: (text) => <EmText>{text}</EmText>,
               })
-              .toElements()}
+              .toElement()}
           </BodyText>
         ))}
         {imageUri && <Image source={{ uri: imageUri }} />}

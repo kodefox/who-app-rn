@@ -31,16 +31,16 @@ export function t(input: string, params?: ParamsObject): string {
 }
 
 interface ResultsArray<T = unknown> extends Array<T> {
-  toElements(): ReactNode;
+  toElement(): ReactNode;
 }
 
-let toElements = (frags: Array<ReactNode>) =>
-  frags.map((s, i) => createElement(Fragment, { key: i }, s));
+let toElement = (elements: Array<ReactNode>) =>
+  createElement(Fragment, null, ...elements);
 
 let createResultsArray = (): ResultsArray => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let results: any = [];
-  results.toElements = () => toElements(results);
+  results.toElement = () => toElement(results);
   return results;
 };
 
