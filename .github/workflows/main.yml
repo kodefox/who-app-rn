@@ -34,6 +34,12 @@ jobs:
       - name: Run tests
         run: yarn test
 
+      - uses: expo/expo-github-action@v5
+        if: github.event_name == 'push'
+        with:
+          expo-version: 3.x
+          expo-cache: true
+
       - name: Deploy preview
         if: github.event_name == 'push'
         run: yarn deploy
