@@ -33,3 +33,7 @@ jobs:
 
       - name: Run tests
         run: yarn test
+
+      - name: Deploy preview
+        if: github.event.name == 'push'
+        run: yarn deploy
