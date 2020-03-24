@@ -25,6 +25,7 @@ export default function useGettingStarted(): boolean | null {
       }
 
       setIsReturningUser(false);
+      setHasFinishedOnboarding();
     });
   }, []);
   return isReturningUser;
