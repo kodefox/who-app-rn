@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-
 import { View, StyleSheet } from 'react-native';
 
+import Banner from '../components/Banner';
 import Carousel from '../components/Carousel';
 import Text from '../components/Text';
 import theme from '../constants/theme';
 
-import Banner from '../../assets/banner_logo.svg';
 import Fever from '../../assets/symptoms_fever.svg';
 import Cough from '../../assets/symptoms_cough.svg';
 import Breath from '../../assets/symptoms_breath.svg';
@@ -95,6 +94,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flex: 1,
     padding: 30,
+    paddingTop: 0,
   },
   container: { flex: 1 },
   headerText: { paddingVertical: 24 },

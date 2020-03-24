@@ -32,6 +32,7 @@ function ProtectYourself(props: Props) {
           }
           navigate('Home');
         }}
+        style={styles.banner}
       />
       <ProtectYourselfCarousel />
     </View>
@@ -42,6 +43,9 @@ let styles = StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  banner: {
+    marginHorizontal: 40,
   },
 });
 

@@ -1,19 +1,27 @@
 import React from 'react';
-import { Image, View, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 
-// TODO: Replace BannerLogo with higher res asset or use actual svg.
-import BannerLogo from '../../assets/banner_logo.png';
+import BannerLogo from '../../assets/logo_horizontal.svg';
 import Close from '../../assets/close.svg';
 
 type Props = {
   onClosePress?: () => void;
+  style?: StyleProp<ViewStyle>;
 };
 
 function Banner(props: Props) {
-  let { onClosePress } = props;
+  let { onClosePress, style } = props;
   return (
-    <View style={styles.root}>
-      <Image resizeMode="contain" source={BannerLogo} style={styles.logo} />
+    <View style={[styles.root, style]}>
+      <View style={styles.logo}>
+        <BannerLogo />
+      </View>
       {onClosePress && (
         <TouchableOpacity
           activeOpacity={0.7}
@@ -30,22 +38,20 @@ function Banner(props: Props) {
 let styles = StyleSheet.create({
   root: {
     flex: 1,
-    height: 72,
-    minHeight: 72,
-    maxHeight: 72,
+    height: 60,
+    minHeight: 60,
+    maxHeight: 60,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: 12,
+    marginTop: 12,
   },
   logo: {
-    // The logo assets have white spaces in them, so we don't add margin left here.
-    width: 250,
     height: 60,
+    width: 196,
   },
   closeWrapper: {
     width: 36,
-    marginRight: 12,
   },
 });
 
