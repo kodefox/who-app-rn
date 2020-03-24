@@ -1,0 +1,37 @@
+{
+  "files": {
+    "app.js": "/who-app-rn/static/js/app.8229bf45.chunk.js",
+    "app.js.map": "/who-app-rn/static/js/app.8229bf45.chunk.js.map",
+    "runtime~app.js": "/who-app-rn/static/js/runtime~app.c6c7a899.js",
+    "runtime~app.js.map": "/who-app-rn/static/js/runtime~app.c6c7a899.js.map",
+    "static/js/2.9d6c94fa.chunk.js": "/who-app-rn/static/js/2.9d6c94fa.chunk.js",
+    "static/js/2.9d6c94fa.chunk.js.map": "/who-app-rn/static/js/2.9d6c94fa.chunk.js.map",
+    "apple/icons/icon_180x180.png": "/who-app-rn/apple/icons/icon_180x180.png",
+    "apple/icons/icon_192x192.png": "/who-app-rn/apple/icons/icon_192x192.png",
+    "apple/icons/icon_512x512.png": "/who-app-rn/apple/icons/icon_512x512.png",
+    "apple/splash/icon_1125x2436.png": "/who-app-rn/apple/splash/icon_1125x2436.png",
+    "apple/splash/icon_1136x640.png": "/who-app-rn/apple/splash/icon_1136x640.png",
+    "apple/splash/icon_1242x2208.png": "/who-app-rn/apple/splash/icon_1242x2208.png",
+    "apple/splash/icon_1242x2688.png": "/who-app-rn/apple/splash/icon_1242x2688.png",
+    "apple/splash/icon_1334x750.png": "/who-app-rn/apple/splash/icon_1334x750.png",
+    "apple/splash/icon_1792x828.png": "/who-app-rn/apple/splash/icon_1792x828.png",
+    "apple/splash/icon_2208x1242.png": "/who-app-rn/apple/splash/icon_2208x1242.png",
+    "apple/splash/icon_2436x1125.png": "/who-app-rn/apple/splash/icon_2436x1125.png",
+    "apple/splash/icon_2688x1242.png": "/who-app-rn/apple/splash/icon_2688x1242.png",
+    "apple/splash/icon_640x1136.png": "/who-app-rn/apple/splash/icon_640x1136.png",
+    "apple/splash/icon_750x1334.png": "/who-app-rn/apple/splash/icon_750x1334.png",
+    "apple/splash/icon_828x1792.png": "/who-app-rn/apple/splash/icon_828x1792.png",
+    "favicon.ico": "/who-app-rn/favicon.ico",
+    "index.html": "/who-app-rn/index.html",
+    "manifest.json": "/who-app-rn/manifest.json",
+    "precache-manifest.a8a3277124ff40215bc7a2a6fb40b3cb.js": "/who-app-rn/precache-manifest.a8a3277124ff40215bc7a2a6fb40b3cb.js",
+    "serve.json": "/who-app-rn/serve.json",
+    "static/media/back-icon-mask.png": "/who-app-rn/static/media/back-icon-mask.5223c8d9.png",
+    "static/media/back-icon.png": "/who-app-rn/static/media/back-icon.35ba0eae.png"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.c6c7a899.js",
+    "static/js/2.9d6c94fa.chunk.js",
+    "static/js/app.8229bf45.chunk.js"
+  ]
+}
