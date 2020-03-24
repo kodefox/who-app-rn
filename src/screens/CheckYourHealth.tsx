@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
 import { View, StyleSheet, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Banner from '../components/Banner';
 import Carousel from '../components/Carousel';
@@ -13,10 +13,11 @@ import Breath from '../../assets/symptoms_breath.svg';
 import Warning from '../../assets/warning.svg';
 
 export default function CheckYourHealth() {
+  let { navigate } = useNavigation();
   const [carouselIndex, setIndex] = useState(0);
   return (
     <View style={styles.root}>
-      <Banner style={styles.banner} />
+      <Banner style={styles.banner} onClosePress={() => navigate('Home')} />
       <View style={styles.headerText}>
         <Text style={styles.centerText}>
           {t.frag('Symptoms may appear <b>2-14 days after exposure</b>', {
