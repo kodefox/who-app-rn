@@ -3,9 +3,9 @@ import { View, StyleSheet } from 'react-native';
 import { useNavigation, RouteProp } from '@react-navigation/native';
 
 import Banner from '../components/Banner';
-import ProtectYourselfCarousel from '../components/ProtectYourselfCarousel';
 import { setHasFinishedOnboarding } from '../helpers/useGettingStarted';
 import { RootStackParamList } from '../App';
+import FlowCarousel from '../components/FlowCarousel';
 
 type Props = { route: RouteProp<RootStackParamList, 'ProtectYourself'> };
 
@@ -34,7 +34,7 @@ function ProtectYourself(props: Props) {
         }}
         style={styles.banner}
       />
-      <ProtectYourselfCarousel />
+      <FlowCarousel flowId="protect-yourself" />
     </View>
   );
 }

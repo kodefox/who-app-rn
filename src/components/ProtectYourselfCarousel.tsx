@@ -10,9 +10,9 @@ import ProtectTrashBin from '../../assets/protect_trash_bin.png';
 import ProtectNoCrowd from '../../assets/protect_no_crowd.png';
 import ProtectMedicalBag from '../../assets/protect_medical_bag.png';
 
+// Right now this component is unused.
 function ProtectYourselfCarousel() {
   let [currentIndex, setCurrentIndex] = useState(0);
-  // TODO: Add navigation from getting started to main screen for first time user.
   return (
     <Carousel currentIndex={currentIndex} onIndexChanged={setCurrentIndex}>
       <Wrapper>

@@ -28,6 +28,7 @@ export interface HeroImageScreen extends BaseScreen {
 }
 
 export type Screen = TextImageScreen | HeroImageScreen;
+export type ScreenType = Screen['type'];
 
 export interface BaseFlow {
   type: string;
