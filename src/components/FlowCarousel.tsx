@@ -83,9 +83,11 @@ let Screens: Record<ScreenType, ComponentType<any> | null> = {
         {screen.bodyTexts?.map((text) => (
           <BodyText key={text}>
             {/* TODO: Should not use non-literal string with translate function */}
-            {t.frag(text, {
-              em: (text) => <EmText>{text}</EmText>,
-            })}
+            {t
+              .frag(text, {
+                em: (text) => <EmText>{text}</EmText>,
+              })
+              .toElements()}
           </BodyText>
         ))}
         {imageUri && <Image source={{ uri: imageUri }} />}
