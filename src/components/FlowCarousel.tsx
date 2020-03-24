@@ -67,7 +67,6 @@ let Screens: Record<ScreenType, ComponentType<any> | null> = {
   TextImage: (props: ScreenProp<TextImageScreen>) => {
     let { flow, screen } = props;
     let [imageUri, setImageUri] = useState<string | null>(null);
-
     let { bottomImageUri } = screen;
 
     // TODO: Move this logic out
@@ -82,7 +81,7 @@ let Screens: Record<ScreenType, ComponentType<any> | null> = {
     return (
       <Wrapper>
         {screen.bodyTexts?.map((text) => (
-          <BodyText>
+          <BodyText key={text}>
             {/* TODO: Should not use non-literal string with translate function */}
             {t.frag(text, {
               em: (text) => <EmText>{text}</EmText>,
