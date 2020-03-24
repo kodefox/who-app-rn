@@ -44,13 +44,13 @@ function FlowCarousel(props: Props) {
 
   return (
     <Carousel currentIndex={currentIndex} onIndexChanged={setCurrentIndex}>
-      {content.screens?.map((s) => {
+      {content.screens?.map((s, i) => {
         let Screen = Screens[s.type];
         if (!Screen) {
           // Specified screen type not found.
           return null;
         }
-        return <Screen flow={flow} screen={s} />;
+        return <Screen key={i} flow={flow} screen={s} />;
       })}
     </Carousel>
   );
