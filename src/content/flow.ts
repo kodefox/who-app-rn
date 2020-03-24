@@ -1,3 +1,4 @@
+import * as yaml from 'js-yaml';
 import {
   FLOWS_ENDPOINT,
   FLOWS_PATH,
@@ -5,7 +6,7 @@ import {
   IMG_PATH,
 } from './endpoints';
 import UserContext, { CONTEXT_DEFAULTS } from './userContext';
-import * as yaml from 'js-yaml';
+import getLocalFlowContent from '../helpers/getLocalFlowContent';
 
 export interface BaseScreen {
   type: string;
@@ -94,8 +95,8 @@ export class FlowLoader {
     }
     for (const suffix of suffixes) {
       try {
-        const url = `${process.env.PUBLIC_URL}/${FLOWS_PATH}/${id}.${suffix}.yaml`;
-        const respText = await fetch(url).then((e) => e.text());
+        const name = `${id}.${suffix}.yaml`;
+        const respText = await getLocalFlowContent(FLOWS_PATH, name);
         return {
           content: yaml.safeLoad(respText) as Flow,
           isLocal: true,
