@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+
+import { View, StyleSheet, ScrollView } from 'react-native';
 
 import Banner from '../components/Banner';
 import Carousel from '../components/Carousel';
@@ -42,20 +43,20 @@ CheckYourHealth.navigationOptions = {
 };
 
 function SymptomOne() {
-  return <Fever style={StyleSheet.flatten(styles.svg)} />;
+  return <Fever width={260} />;
 }
 
 function SymptomTwo() {
-  return <Cough style={StyleSheet.flatten(styles.svg)} />;
+  return <Cough width={260} />;
 }
 
 function SymptomThree() {
-  return <Breath style={StyleSheet.flatten(styles.svg)} />;
+  return <Breath width={260} />;
 }
 
 function SymptomFour() {
   return (
-    <>
+    <ScrollView contentContainerStyle={styles.symptomFourContainer}>
       <View style={styles.warningContainer}>
         <View style={styles.cardHeader}>
           <View style={styles.warningSvgWrapper}>
@@ -85,7 +86,7 @@ function SymptomFour() {
           </Text>
         </View>
       </View>
-    </>
+    </ScrollView>
   );
 }
 
@@ -93,11 +94,9 @@ const styles = StyleSheet.create({
   root: {
     backgroundColor: 'white',
     flex: 1,
-    padding: 30,
-    paddingTop: 0,
   },
-  container: { flex: 1 },
-  headerText: { paddingVertical: 24 },
+  container: { flex: 1, alignItems: 'center' },
+  headerText: { paddingVertical: 24, paddingHorizontal: 30 },
   centerText: { textAlign: 'center' },
   svg: { alignSelf: 'center' },
   warningSvgWrapper: { paddingRight: 12 },
@@ -111,5 +110,8 @@ const styles = StyleSheet.create({
   contactContainer: {
     backgroundColor: theme.colors.secondaryCardBackground,
     padding: 24,
+  },
+  symptomFourContainer: {
+    paddingHorizontal: 30,
   },
 });
