@@ -9,7 +9,10 @@ export default function Home() {
   const { navigate } = useNavigation();
 
   return (
-    <ScrollView style={styles.root}>
+    <ScrollView
+      style={styles.root}
+      contentContainerStyle={styles.contentContainer}
+    >
       <Banner />
       <View style={styles.wrapper}>
         <Button
@@ -40,12 +43,13 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   root: {
-    flex: 1,
     backgroundColor: 'white',
+  },
+  contentContainer: {
+    paddingHorizontal: 40,
   },
   wrapper: {
     marginTop: 20,
-    paddingHorizontal: 40,
   },
   button: {
     marginVertical: 15,
