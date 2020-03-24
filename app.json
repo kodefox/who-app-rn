@@ -16,7 +16,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": ["assets/*", "content/*"],
     "packagerOpts": {
       "config": "metro.config.js",
       "sourceExts": [
@@ -30,7 +30,8 @@
         "jsx",
         "json",
         "wasm",
-        "svg"
+        "svg",
+        "yaml"
       ]
     },
     "ios": {

@@ -14,13 +14,16 @@
     "test": "yarn lint && yarn typecheck && yarn format:check && yarn jest",
     "eject": "expo eject",
     "deploy": "gh-pages -d web-build",
-    "predeploy": "expo build:web"
+    "predeploy": "expo build:web",
+    "codegen": "node ./scripts/codegen"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.5",
     "@react-navigation/native": "^5.1.2",
     "@react-navigation/stack": "^5.2.4",
     "expo": "~36.0.0",
+    "expo-asset": "~8.0.0",
+    "js-yaml": "^3.13.1",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
@@ -37,6 +40,7 @@
     "@expo/webpack-config": "^0.11.9",
     "@svgr/webpack": "^5.3.0",
     "@types/jest": "^25.1.4",
+    "@types/js-yaml": "^3.12.2",
     "@types/react": "~16.9.0",
     "@types/react-native": "~0.60.23",
     "@types/react-test-renderer": "^16.9.2",
@@ -44,6 +48,7 @@
     "eslint": "^6.8.0",
     "eslint-config-kodefox": "^0.2.2",
     "eslint-plugin-t": "^1.1.0",
+    "fs-extra": "^9.0.0",
     "gh-pages": "^2.2.0",
     "jest": "^25.1.0",
     "jest-expo": "^36.0.1",
@@ -71,7 +76,10 @@
     "rules": {
       "import/order": 0,
       "t/string-literal": 1
-    }
+    },
+    "ignorePatterns": [
+      "*.js"
+    ]
   },
   "prettier": {
     "singleQuote": true,
