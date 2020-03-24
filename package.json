@@ -1,6 +1,6 @@
 {
   "main": "node_modules/expo/AppEntry.js",
-  "homepage": "https://kodefox.github.io/who-app",
+  "homepage": "https://kodefox.github.io/who-app-rn",
   "scripts": {
     "start": "expo start",
     "android": "yarn start --android",
