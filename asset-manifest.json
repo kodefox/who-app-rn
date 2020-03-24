@@ -1,11 +1,11 @@
 {
   "files": {
-    "app.js": "/who-app-rn/static/js/app.8229bf45.chunk.js",
-    "app.js.map": "/who-app-rn/static/js/app.8229bf45.chunk.js.map",
+    "app.js": "/who-app-rn/static/js/app.b83a4be0.chunk.js",
+    "app.js.map": "/who-app-rn/static/js/app.b83a4be0.chunk.js.map",
     "runtime~app.js": "/who-app-rn/static/js/runtime~app.c6c7a899.js",
     "runtime~app.js.map": "/who-app-rn/static/js/runtime~app.c6c7a899.js.map",
-    "static/js/2.9d6c94fa.chunk.js": "/who-app-rn/static/js/2.9d6c94fa.chunk.js",
-    "static/js/2.9d6c94fa.chunk.js.map": "/who-app-rn/static/js/2.9d6c94fa.chunk.js.map",
+    "static/js/2.00b7c338.chunk.js": "/who-app-rn/static/js/2.00b7c338.chunk.js",
+    "static/js/2.00b7c338.chunk.js.map": "/who-app-rn/static/js/2.00b7c338.chunk.js.map",
     "apple/icons/icon_180x180.png": "/who-app-rn/apple/icons/icon_180x180.png",
     "apple/icons/icon_192x192.png": "/who-app-rn/apple/icons/icon_192x192.png",
     "apple/icons/icon_512x512.png": "/who-app-rn/apple/icons/icon_512x512.png",
@@ -24,14 +24,20 @@
     "favicon.ico": "/who-app-rn/favicon.ico",
     "index.html": "/who-app-rn/index.html",
     "manifest.json": "/who-app-rn/manifest.json",
-    "precache-manifest.a8a3277124ff40215bc7a2a6fb40b3cb.js": "/who-app-rn/precache-manifest.a8a3277124ff40215bc7a2a6fb40b3cb.js",
+    "precache-manifest.16348ca230a9a89c2ec6caa959d15c9b.js": "/who-app-rn/precache-manifest.16348ca230a9a89c2ec6caa959d15c9b.js",
     "serve.json": "/who-app-rn/serve.json",
     "static/media/back-icon-mask.png": "/who-app-rn/static/media/back-icon-mask.5223c8d9.png",
-    "static/media/back-icon.png": "/who-app-rn/static/media/back-icon.35ba0eae.png"
+    "static/media/back-icon.png": "/who-app-rn/static/media/back-icon.35ba0eae.png",
+    "static/media/check-your-health.ww.en.yaml": "/who-app-rn/static/media/check-your-health.ww.en.e2474917.yaml",
+    "static/media/cough.png": "/who-app-rn/static/media/cough.e89bb4a6.png",
+    "static/media/distance.png": "/who-app-rn/static/media/distance.8f3dd776.png",
+    "static/media/protect-yourself.ww.en.yaml": "/who-app-rn/static/media/protect-yourself.ww.en.6b956892.yaml",
+    "static/media/splash-carousel.ww.en.yaml": "/who-app-rn/static/media/splash-carousel.ww.en.c663ab57.yaml",
+    "static/media/washHands.png": "/who-app-rn/static/media/washHands.09ab06f2.png"
   },
   "entrypoints": [
     "static/js/runtime~app.c6c7a899.js",
-    "static/js/2.9d6c94fa.chunk.js",
-    "static/js/app.8229bf45.chunk.js"
+    "static/js/2.00b7c338.chunk.js",
+    "static/js/app.b83a4be0.chunk.js"
   ]
 }
