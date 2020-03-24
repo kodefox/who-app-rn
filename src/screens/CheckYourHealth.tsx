@@ -17,11 +17,11 @@ export default function CheckYourHealth() {
   return (
     <View style={styles.root}>
       <Banner />
-      {/** TODO: sacrificed i18n in favor of styling */}
       <View style={styles.headerText}>
         <Text style={styles.centerText}>
-          {t('Symptoms may appear ')}
-          <Text weight="bold">{t('2-14 days after exposure')}</Text>
+          {t.frag('Symptoms may appear <b>2-14 days after exposure</b>', {
+            b: (content) => <Text weight="bold">{content}</Text>,
+          })}
         </Text>
       </View>
       <Carousel
