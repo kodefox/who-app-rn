@@ -18,7 +18,7 @@ async function generateContentIndex() {
     'export default index;',
   ].join('\n');
 
-  await outputFile('./generated/index.ts', output + '\n');
+  await outputFile('./generated/content.ts', output + '\n');
 }
 
 async function getYamlFileList(path) {
